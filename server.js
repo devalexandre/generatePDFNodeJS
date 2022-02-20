@@ -2,6 +2,8 @@ const polka = require('polka');
 const { json } = require("@polka/parse");
 const pdf = require('html-pdf')
 
+const PORT = process.env.PORT || 3000;
+
 polka()
 .use(json())
 .get("/", (req, res) => {
@@ -24,6 +26,6 @@ polka()
     })
 
 })
-.listen(3000,()=>{
+.listen(PORT,()=>{
     console.log("listening on port 3000");
 })
