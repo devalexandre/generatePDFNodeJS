@@ -4,6 +4,9 @@ const pdf = require('html-pdf')
 
 polka()
 .use(json())
+.get("/", (req, res) => {
+  res.end("Hello World!")
+})
 .post("/generate",(req,res)=>{
 
 	const { html } = req.body
